@@ -1,0 +1,21 @@
+services:
+  otp-playground-public:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: otp-playground-public
+    command: npm start
+    expose:
+      - ${OTP_PLAYGROUND_PORT:-32768}
+    ports:
+      - ${OTP_PLAYGROUND_PORT:-32768}:${OTP_PLAYGROUND_PORT:-32768}
+    volumes:
+      - ./:/var/otp-playground
+    working_dir: /var/otp-playground
+    logging:
+      driver: json-file
+      options:
+        tag: "{{.ImageName}}|{{.Name}}|{{.ImageFullID}}|{{.FullID}}"
+        max-size: 10m
+        max-file: 5
+

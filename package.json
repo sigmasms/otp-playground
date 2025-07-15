@@ -1,0 +1,21 @@
+{
+  "name": "otp-playground",
+  "description": "OTP playground.",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "tsx watch src/index.ts",
+    "check-types": "tsc --pretty --noEmit"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^22.16.4",
+    "tsx": "^4.20.3"
+  },
+  "dependencies": {
+    "@sigmamessaging/otp-sdk": "^1.7.5",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
